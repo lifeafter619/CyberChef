@@ -285,12 +285,12 @@ class App {
         // Add edit button to first category (Favourites)
         const favCat = document.querySelector("#categories a");
         favCat.appendChild(document.getElementById("edit-favourites"));
-        favCat.setAttribute("data-help-title", "Favourite operations");
-        favCat.setAttribute("data-help", `<p>This category displays your favourite operations.</p>
+        favCat.setAttribute("data-help-title", "收藏的操作");
+        favCat.setAttribute("data-help", `<p>该类别显示你的收藏操作。</p>
         <ul>
-            <li><b>To add:</b> drag an operation over the Favourites category</li>
-            <li><b>To reorder:</b> Click on the 'Edit favourites' button and drag operations up and down in the list provided</li>
-            <li><b>To remove:</b> Click on the 'Edit favourites' button and hit the delete button next to the operation you want to remove</li>
+            <li><b>添加：</b>将操作拖到收藏类别上</li>
+            <li><b>重新排序：</b>点击“编辑收藏”按钮，在列表中上下拖动操作</li>
+            <li><b>移除：</b>点击“编辑收藏”按钮，点击目标操作旁的删除按钮</li>
         </ul>`);
     }
 
@@ -650,7 +650,7 @@ class App {
 
         // const compareURL = `https://github.com/gchq/CyberChef/compare/v${prev.join(".")}...v${PKG_VERSION}`;
 
-        let compileInfo = `<a href='https://github.com/gchq/CyberChef/blob/master/CHANGELOG.md'>Last build: ${timeSinceCompile.substring(0, 1).toUpperCase() + timeSinceCompile.substring(1)} ago</a>`;
+        let compileInfo = `<a href='https://github.com/gchq/CyberChef/blob/master/CHANGELOG.md'>上次构建：${timeSinceCompile}前</a>`;
 
         if (window.compileMessage !== "") {
             compileInfo += " - " + window.compileMessage;
@@ -659,8 +659,8 @@ class App {
         const notice = document.getElementById("notice");
         notice.innerHTML = compileInfo;
         notice.setAttribute("title", Utils.stripHtmlTags(window.compileMessage));
-        notice.setAttribute("data-help-title", "Last build");
-        notice.setAttribute("data-help", "This live version of CyberChef is updated whenever new commits are added to the master branch of the CyberChef repository. It represents the latest, most up-to-date build of CyberChef.");
+        notice.setAttribute("data-help-title", "上次构建");
+        notice.setAttribute("data-help", "此在线版本的 CyberChef 会在 CyberChef 仓库的 master 分支有新提交时更新，代表最新且最及时的构建版本。");
     }
 
 

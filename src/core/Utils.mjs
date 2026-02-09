@@ -1088,17 +1088,17 @@ class Utils {
                                 href='#collapse${i}'
                                 aria-expanded='false'
                                 aria-controls='collapse${i}'
-                                title="Show/hide contents of '${Utils.escapeHtml(file.name)}'">
+                                title="显示/隐藏“${Utils.escapeHtml(file.name)}”的内容">
                                 ${Utils.escapeHtml(file.name)}</a>
                             <span class='float-right' style="margin-top: -3px">
-                                ${file.size.toLocaleString()} bytes
-                                <a title="Download ${Utils.escapeHtml(file.name)}"
+                                ${file.size.toLocaleString()} 字节
+                                <a title="下载 ${Utils.escapeHtml(file.name)}"
                                     href="${blobURL}"
                                     download="${Utils.escapeHtml(file.name)}"
                                     data-toggle="tooltip">
                                     <i class="material-icons" style="vertical-align: bottom">save</i>
                                 </a>
-                                <a title="Move to input"
+                                <a title="移动到输入"
                                     href="#"
                                     blob-url="${blobURL}"
                                     file-name="${Utils.escapeHtml(file.name)}"
@@ -1499,13 +1499,123 @@ String.prototype.count = function(chr) {
  * @param {string} msg
  */
 export function sendStatusMessage(msg) {
+    const translatedMsg = translateStatusMessage(msg);
     if (isWorkerEnvironment())
-        self.sendStatusMessage(msg);
+        self.sendStatusMessage(translatedMsg);
     else if (isWebEnvironment())
-        app.alert(msg, 10000);
+        app.alert(translatedMsg, 10000);
     else if (isNodeEnvironment() && !global.TESTING)
         // eslint-disable-next-line no-console
-        console.debug(msg);
+        console.debug(translatedMsg);
+}
+
+/**
+ * Translate status messages to Chinese for display.
+ *
+ * @param {string} msg
+ * @returns {string}
+ */
+function translateStatusMessage(msg) {
+    if (!msg || typeof msg !== "string") return msg;
+    const directMap = new Map([
+        ["Loading Bzip2...", "正在加载 Bzip2..."],
+        ["Compressing data...", "正在压缩数据..."],
+        ["Decompressing data...", "正在解压数据..."],
+        ["Inverting image...", "正在反转图像..."],
+        ["Resizing image...", "正在调整图像大小..."],
+        ["Containing image...", "正在以包含方式调整图像..."],
+        ["Changing image opacity...", "正在更改图像不透明度..."],
+        ["Sharpening image... (Cloning image)", "正在锐化图像...（复制图像）"],
+        ["Sharpening image... (Blurring cloned image)", "正在锐化图像...（模糊复制图像）"],
+        ["Sharpening image... (Creating unsharp mask)", "正在锐化图像...（创建非锐化蒙版）"],
+        ["Sharpening image... (Merging with unsharp mask)", "正在锐化图像...（合并非锐化蒙版）"],
+        ["Flipping image...", "正在翻转图像..."],
+        ["Changing image brightness...", "正在调整图像亮度..."],
+        ["Changing image contrast...", "正在调整图像对比度..."],
+        ["Rotating image...", "正在旋转图像..."],
+        ["Cropping image...", "正在裁剪图像..."],
+        ["Changing image hue...", "正在调整图像色相..."],
+        ["Changing image saturation...", "正在调整图像饱和度..."],
+        ["Changing image lightness...", "正在调整图像明度..."],
+        ["Adding text to image...", "正在向图像添加文字..."],
+        ["Fast blurring image...", "正在快速模糊图像..."],
+        ["Gaussian blurring image...", "正在高斯模糊图像..."],
+        ["Covering image...", "正在覆盖图像..."],
+        ["Applying dither to image...", "正在对图像应用抖动..."],
+        ["Generating image from data...", "正在从数据生成图像..."],
+        ["Scaling image...", "正在缩放图像..."],
+        ["Instantiating YARA...", "正在初始化 YARA..."],
+        ["Converting data for YARA.", "正在为 YARA 转换数据。"],
+        ["Running YARA matching.", "正在运行 YARA 匹配。"],
+        ["Processing data.", "正在处理数据。"],
+        ["Spinning up Tesseract worker...", "正在启动 Tesseract 工作线程..."],
+        ["Finding text...", "正在查找文本..."]
+    ]);
+
+    if (directMap.has(msg)) {
+        return directMap.get(msg);
+    }
+
+    const replacements = [
+        {
+            regex: /^Loading (.+) module$/,
+            replace: "正在加载 $1 模块"
+        },
+        {
+            regex: /^Applying (.+) filter to image\.\.\.$/,
+            replace: "正在对图像应用 $1 滤镜..."
+        },
+        {
+            regex: /^Compressing input: ([0-9.]+)%$/,
+            replace: "正在压缩输入：$1%"
+        },
+        {
+            regex: /^Decompressing input: ([0-9.]+)%$/,
+            replace: "正在解压输入：$1%"
+        },
+        {
+            regex: /^Progress: ([0-9.]+)%$/,
+            replace: "进度：$1%"
+        },
+        {
+            regex: /^Found potential signature for (.+) at pos ([0-9]+)$/,
+            replace: "在位置 $2 发现可能的 $1 签名"
+        },
+        {
+            regex: /^Attempting to extract (.+) at pos ([0-9]+)\.\.\.$/,
+            replace: "正在尝试在位置 $2 提取 $1..."
+        },
+        {
+            regex: /^Calculating (.+) values\.\.\. ([0-9.]+)%$/,
+            replace: "正在计算 $1 个值... $2%"
+        },
+        {
+            regex: /^Calculating (.+) values\.\.\.$/,
+            replace: "正在计算 $1 个值..."
+        },
+        {
+            regex: /^Baking\.\.\. \(([0-9]+)\/([0-9]+)\)$/,
+            replace: "烘焙中...（$1/$2）"
+        }
+    ];
+
+    for (const {regex, replace} of replacements) {
+        if (regex.test(msg)) {
+            return msg.replace(regex, replace);
+        }
+    }
+
+    if (msg.startsWith("Status: ")) {
+        const statusText = msg.replace("Status: ", "");
+        const [statusLabel, statusExtra] = statusText.split(" - ");
+        const statusMap = new Map([
+            ["recognizing text", "识别文本中"]
+        ]);
+        const translatedLabel = statusMap.get(statusLabel) || statusLabel;
+        return statusExtra ? `状态：${translatedLabel} - ${statusExtra}` : `状态：${translatedLabel}`;
+    }
+
+    return msg;
 }
 
 const debounceTimeouts = {};

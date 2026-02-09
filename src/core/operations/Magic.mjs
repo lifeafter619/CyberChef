@@ -121,14 +121,14 @@ class Magic extends Operation {
                 fileType = "",
                 matchingOps = "",
                 useful = "";
-            const entropy = `<span data-toggle="tooltip" data-container="body" title="Shannon Entropy is measured from 0 to 8. High entropy suggests encrypted or compressed data. Normal text is usually around 3.5 to 5.">Entropy: <span style="color: ${chooseColour(option.entropy)}">${option.entropy.toFixed(2)}</span></span>`,
-                validUTF8 = option.isUTF8 ? "<span data-toggle='tooltip' data-container='body' title='The data could be a valid UTF8 string based on its encoding.'>Valid UTF8</span>\n" : "";
+            const entropy = `<span data-toggle="tooltip" data-container="body" title="香农熵的取值范围为 0 到 8。高熵通常表示数据已加密或压缩。普通文本通常在 3.5 到 5 之间。">熵：<span style="color: ${chooseColour(option.entropy)}">${option.entropy.toFixed(2)}</span></span>`,
+                validUTF8 = option.isUTF8 ? "<span data-toggle='tooltip' data-container='body' title='根据编码，该数据可能是有效的 UTF8 字符串。'>有效 UTF8</span>\n" : "";
 
             if (option.languageScores[0].probability > 0) {
                 let likelyLangs = option.languageScores.filter(l => l.probability > 0);
                 if (likelyLangs.length < 1) likelyLangs = [option.languageScores[0]];
-                language = "<span data-toggle='tooltip' data-container='body' title='Based on a statistical comparison of the frequency of bytes in various languages. Ordered by likelihood.'>" +
-                    "Possible languages:\n    " +
+                language = "<span data-toggle='tooltip' data-container='body' title='基于各语言字节频率的统计对比，按可能性排序。'>" +
+                    "可能的语言：\n    " +
                     likelyLangs.map(lang => {
                         return MagicLib.codeToLanguage(lang.lang);
                     }).join("\n    ") +
@@ -136,15 +136,15 @@ class Magic extends Operation {
             }
 
             if (option.fileType) {
-                fileType = `<span data-toggle="tooltip" data-container="body" title="Based on the presence of magic bytes.">File type: ${option.fileType.mime} (${option.fileType.ext})</span>\n`;
+                fileType = `<span data-toggle="tooltip" data-container="body" title="基于魔术字节判断。">文件类型：${option.fileType.mime} (${option.fileType.ext})</span>\n`;
             }
 
             if (option.matchingOps.length) {
-                matchingOps = `Matching ops: ${[...new Set(option.matchingOps.map(op => op.op))].join(", ")}\n`;
+                matchingOps = `匹配的操作：${[...new Set(option.matchingOps.map(op => op.op))].join(", ")}\n`;
             }
 
             if (option.useful) {
-                useful = "<span data-toggle='tooltip' data-container='body' title='This could be an operation that displays data in a useful way, such as rendering an image.'>Useful op detected</span>\n";
+                useful = "<span data-toggle='tooltip' data-container='body' title='这可能是一个以有用方式展示数据的操作，例如渲染图像。'>检测到有用操作</span>\n";
             }
 
             output += `<tr>
@@ -157,7 +157,7 @@ class Magic extends Operation {
         output += "</table><script type='application/javascript'>$('[data-toggle=\"tooltip\"]').tooltip()</script>";
 
         if (!options.length) {
-            output = "Nothing of interest could be detected about the input data.\nHave you tried modifying the operation arguments?";
+            output = "未能检测到输入数据的有用信息。\n你是否尝试修改操作参数？";
         }
 
         return output;

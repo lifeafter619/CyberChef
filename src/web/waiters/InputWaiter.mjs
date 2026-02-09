@@ -182,7 +182,7 @@ class InputWaiter {
 
         if (this.eolState === 1) {
             // Alert
-            this.app.alert(`Input end of line separator has been detected and changed to ${eolCodeToName[eol]}`, 5000);
+            this.app.alert(`已检测到输入行结束符并更改为 ${eolCodeToName[eol]}`, 5000);
         }
 
         // Update the EOL value
@@ -281,7 +281,7 @@ class InputWaiter {
             if (longest > lineLengthThreshold) {
                 // If we are exceeding the max line length, turn off word wrap
                 wrap = false;
-                this.app.alert("Maximum line length exceeded. Word wrap will be temporarily disabled to improve performance.", 20000);
+                this.app.alert("超过最大行长度。为提升性能，将临时关闭自动换行。", 20000);
             }
         }
 
@@ -1188,17 +1188,17 @@ class InputWaiter {
         width = width < 2 ? 2 : width;
 
         const totalStr = total.toLocaleString().padStart(width, " ").replace(/ /g, "&nbsp;");
-        let msg = "total: " + totalStr;
+        let msg = "总计：" + totalStr;
 
         const loadedStr = loaded.toLocaleString().padStart(width, " ").replace(/ /g, "&nbsp;");
-        msg += "<br>loaded: " + loadedStr;
+        msg += "<br>已加载：" + loadedStr;
 
         if (pending > 0) {
             const pendingStr = pending.toLocaleString().padStart(width, " ").replace(/ /g, "&nbsp;");
-            msg += "<br>pending: " + pendingStr;
+            msg += "<br>待处理：" + pendingStr;
         } else if (loading > 0) {
             const loadingStr = loading.toLocaleString().padStart(width, " ").replace(/ /g, "&nbsp;");
-            msg += "<br>loading: " + loadingStr;
+            msg += "<br>加载中：" + loadingStr;
         }
 
         const inFiles = document.getElementById("input-files-info");
@@ -1566,7 +1566,7 @@ class InputWaiter {
      */
     async goToTab() {
         const inputNums = await this.getInputNums();
-        let tabNum = window.prompt(`Enter tab number (${inputNums.min} - ${inputNums.max}):`, this.manager.tabs.getActiveTab("input").toString());
+        let tabNum = window.prompt(`请输入标签页编号（${inputNums.min} - ${inputNums.max}）：`, this.manager.tabs.getActiveTab("input").toString());
 
         if (tabNum === null) return;
         tabNum = parseInt(tabNum, 10);

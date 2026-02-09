@@ -13,6 +13,7 @@ import "snackbarjs";
 import "bootstrap-material-design/js/index";
 import "bootstrap-colorpicker";
 import moment from "moment-timezone";
+import "moment/locale/zh-cn";
 import * as CanvasComponents from "../core/lib/CanvasComponents.mjs";
 
 // CyberChef
@@ -25,6 +26,7 @@ import OperationConfig from "../core/config/OperationConfig.json" assert {type: 
  * Main function used to build the CyberChef web app.
  */
 function main() {
+    moment.locale("zh-cn");
     const defaultFavourites = [
         "To Base64",
         "From Base64",
@@ -67,4 +69,3 @@ window.compileMessage = COMPILE_MSG;
 window.CanvasComponents = CanvasComponents;
 
 document.addEventListener("DOMContentLoaded", main, false);
-

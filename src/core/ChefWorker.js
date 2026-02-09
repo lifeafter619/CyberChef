@@ -212,7 +212,7 @@ self.loadRequiredModules = function(recipeConfig) {
 
         if (!(module in OpModules)) {
             log.info(`Loading ${module} module`);
-            self.sendStatusMessage(`Loading ${module} module`);
+            self.sendStatusMessage(`正在加载 ${module} 模块`);
             self.importScripts(`${self.docURL}/modules/${module}.js`); // lgtm [js/client-side-unvalidated-url-redirection]
             self.sendStatusMessage("");
         }

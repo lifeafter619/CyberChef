@@ -420,7 +420,7 @@ class RecipeWaiter {
         // Disable auto-bake if this is a manual op
         if (op.manualBake && this.app.autoBake_) {
             this.manager.controls.setAutoBake(false);
-            this.app.alert("Auto-Bake is disabled by default when using this operation.", 5000);
+            this.app.alert("使用该操作时默认关闭自动烘焙。", 5000);
         }
     }
 

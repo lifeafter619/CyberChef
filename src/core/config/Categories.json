@@ -1,10 +1,10 @@
 [
     {
-        "name": "Favourites",
+        "name": "收藏",
         "ops": []
     },
     {
-        "name": "Data format",
+        "name": "数据格式",
         "ops": [
             "To Hexdump",
             "From Hexdump",
@@ -85,7 +85,7 @@
         ]
     },
     {
-        "name": "Encryption / Encoding",
+        "name": "加密 / 编码",
         "ops": [
             "AES Encrypt",
             "AES Decrypt",
@@ -168,7 +168,7 @@
         ]
     },
     {
-        "name": "Public Key",
+        "name": "公钥",
         "ops": [
             "Parse X.509 certificate",
             "Parse X.509 CRL",
@@ -203,7 +203,7 @@
         ]
     },
     {
-        "name": "Arithmetic / Logic",
+        "name": "算术 / 逻辑",
         "ops": [
             "Set Union",
             "Set Intersection",
@@ -234,7 +234,7 @@
         ]
     },
     {
-        "name": "Networking",
+        "name": "网络",
         "ops": [
             "HTTP request",
             "DNS over HTTPS",
@@ -276,7 +276,7 @@
         ]
     },
     {
-        "name": "Language",
+        "name": "语言",
         "ops": [
             "Encode text",
             "Decode text",
@@ -288,7 +288,7 @@
         ]
     },
     {
-        "name": "Utils",
+        "name": "工具",
         "ops": [
             "Diff",
             "Remove whitespace",
@@ -343,7 +343,7 @@
         ]
     },
     {
-        "name": "Date / Time",
+        "name": "日期 / 时间",
         "ops": [
             "Parse DateTime",
             "Translate DateTime Format",
@@ -358,7 +358,7 @@
         ]
     },
     {
-        "name": "Extractors",
+        "name": "提取",
         "ops": [
             "Strings",
             "Extract IP addresses",
@@ -382,7 +382,7 @@
         ]
     },
     {
-        "name": "Compression",
+        "name": "压缩",
         "ops": [
             "Raw Deflate",
             "Raw Inflate",
@@ -406,7 +406,7 @@
         ]
     },
     {
-        "name": "Hashing",
+        "name": "哈希",
         "ops": [
             "Analyse hash",
             "Generate all checksums",
@@ -458,7 +458,7 @@
         ]
     },
     {
-        "name": "Code tidy",
+        "name": "代码整理",
         "ops": [
             "Syntax highlighter",
             "Generic Code Beautify",
@@ -493,7 +493,7 @@
         ]
     },
     {
-        "name": "Forensics",
+        "name": "取证",
         "ops": [
             "Detect File Type",
             "Scan for Embedded Files",
@@ -509,7 +509,7 @@
         ]
     },
     {
-        "name": "Multimedia",
+        "name": "多媒体",
         "ops": [
             "Render Image",
             "Play Media",
@@ -542,7 +542,7 @@
         ]
     },
     {
-        "name": "Other",
+        "name": "其他",
         "ops": [
             "Entropy",
             "Frequency distribution",
@@ -566,7 +566,7 @@
         ]
     },
     {
-        "name": "Flow control",
+        "name": "流程控制",
         "ops": [
             "Magic",
             "Fork",
