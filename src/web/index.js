@@ -13,6 +13,8 @@ import "snackbarjs";
 import "bootstrap-material-design/js/index";
 import "bootstrap-colorpicker";
 import moment from "moment-timezone";
+
+moment.locale("zh-cn");
 import * as CanvasComponents from "../core/lib/CanvasComponents.mjs";
 
 // CyberChef
@@ -67,4 +69,3 @@ window.compileMessage = COMPILE_MSG;
 window.CanvasComponents = CanvasComponents;
 
 document.addEventListener("DOMContentLoaded", main, false);
-
