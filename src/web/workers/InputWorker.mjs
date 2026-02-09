@@ -942,7 +942,7 @@ self.filterTabs = function(searchData) {
 
         if (addInput) {
             if (textDisplay === "" || textDisplay === undefined) {
-                textDisplay = "New Tab";
+                textDisplay = "新建标签页";
             }
             const inputItem = {
                 inputNum: iNum,

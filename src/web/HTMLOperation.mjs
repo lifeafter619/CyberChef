@@ -83,9 +83,9 @@ class HTMLOperation {
 
         html += `</div>
         <div class="recip-icons">
-            <i class="material-icons breakpoint" title="Set breakpoint" break="false" data-help-title="Setting breakpoints" data-help="Setting a breakpoint on an operation will cause execution of the Recipe to pause when it reaches that operation.">pause</i>
-            <i class="material-icons disable-icon" title="Disable operation" disabled="false" data-help-title="Disabling operations" data-help="Disabling an operation will prevent it from being executed when the Recipe is baked. Execution will skip over the disabled operation and continue with subsequent operations.">not_interested</i>
-            <i class="material-icons hide-args-icon" title="Hide operation's arguments" hide-args="false" data-help-title="Hide operation's arguments" data-help="Hiding an operation's argument will save space in the Recipe window. Execution will still take place with the selected argument options.">keyboard_arrow_up</i>
+            <i class="material-icons breakpoint" title="设置断点" break="false" data-help-title="设置断点" data-help="在操作上设置断点会使配方执行到该操作时暂停。">pause</i>
+            <i class="material-icons disable-icon" title="禁用操作" disabled="false" data-help-title="禁用操作" data-help="禁用操作后，烘焙配方时将不会执行该操作。执行会跳过该操作并继续后续操作。">not_interested</i>
+            <i class="material-icons hide-args-icon" title="隐藏操作参数" hide-args="false" data-help-title="隐藏操作参数" data-help="隐藏某个操作的参数可节省配方窗口空间。执行仍会使用所选参数选项。">keyboard_arrow_up</i>
         </div>
         <div class="clearfix">&nbsp;</div>`;
 
@@ -168,10 +168,10 @@ function titleFromWikiLink(urlStr) {
             break;
         default:
             // Not a wiki link, return full URL
-            return `<a href='${urlStr}' target='_blank'>More Information<i class='material-icons inline-icon'>open_in_new</i></a>`;
+            return `<a href='${urlStr}' target='_blank'>更多信息<i class='material-icons inline-icon'>open_in_new</i></a>`;
     }
 
-    return `<a href='${urlObj.href}' target='_blank'>${pageTitle}<i class='material-icons inline-icon'>open_in_new</i></a> on ${wikiName}`;
+    return `<a href='${urlObj.href}' target='_blank'>${pageTitle}<i class='material-icons inline-icon'>open_in_new</i></a>（${wikiName}）`;
 }
 
 export default HTMLOperation;

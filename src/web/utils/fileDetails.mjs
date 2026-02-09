@@ -38,37 +38,39 @@ class FileDetailsPanel {
 
         dom.className = "cm-file-details";
         const fileThumb = require("../static/images/file-128x128.png");
+        const rawType = this.fileDetails?.type;
+        const displayType = rawType ? (rawType === "unknown" ? "未知" : rawType) : "";
         dom.innerHTML = `
             <div class="${this.hidden ? "file-details-toggle-hidden" : "file-details-toggle-shown"}"
                 data-toggle="tooltip"
-                title="${this.hidden ? "Show" : "Hide"} file details">
+                title="${this.hidden ? "显示" : "隐藏"}文件详情">
                 ${this.hidden ? "&#10096;" : "&#10097;"}
             </div>
-            <p class="file-details-heading">File details</p>
-            <img aria-hidden="true" src="${fileThumb}" alt="File icon" class="file-details-thumbnail"/>
+            <p class="file-details-heading">文件详情</p>
+            <img aria-hidden="true" src="${fileThumb}" alt="文件图标" class="file-details-thumbnail"/>
             <table class="file-details-data">
                 <tr>
-                    <td>Name:</td>
+                    <td>名称：</td>
                     <td class="file-details-name" title="${Utils.escapeHtml(this.fileDetails?.name)}">
                         ${Utils.escapeHtml(this.fileDetails?.name)}
                     </td>
                 </tr>
                 <tr>
-                    <td>Size:</td>
-                    <td class="file-details-size" title="${Utils.escapeHtml(this.fileDetails?.size)} bytes">
-                        ${Utils.escapeHtml(this.fileDetails?.size)} bytes
+                    <td>大小：</td>
+                    <td class="file-details-size" title="${Utils.escapeHtml(this.fileDetails?.size)} 字节">
+                        ${Utils.escapeHtml(this.fileDetails?.size)} 字节
                     </td>
                 </tr>
                 <tr>
-                    <td>Type:</td>
-                    <td class="file-details-type" title="${Utils.escapeHtml(this.fileDetails?.type)}">
-                        ${Utils.escapeHtml(this.fileDetails?.type)}
+                    <td>类型：</td>
+                    <td class="file-details-type" title="${Utils.escapeHtml(displayType)}">
+                        ${Utils.escapeHtml(displayType)}
                     </td>
                 </tr>
                 <tr>
-                    <td>Loaded:</td>
+                    <td>已加载：</td>
                     <td class="file-details-${this.status === "error" ? "error" : "loaded"}">
-                        ${this.status === "error" ? "Error" : this.progress + "%"}
+                        ${this.status === "error" ? "错误" : this.progress + "%"}
                     </td>
                 </tr>
             </table>
@@ -102,7 +104,7 @@ class FileDetailsPanel {
         } else {
             this.resetFileThumb();
         }
-        fileType.textContent = type ? type : detectFileType(fileBuffer)[0]?.mime ?? "unknown";
+        fileType.textContent = type ? type : detectFileType(fileBuffer)[0]?.mime ?? "未知";
     }
 
     /**

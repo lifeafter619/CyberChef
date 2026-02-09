@@ -17,6 +17,7 @@ class HTMLCategory {
      */
     constructor(name, selected) {
         this.name = name;
+        this.displayName = CATEGORY_TRANSLATIONS[this.name] || this.name;
         this.selected = selected;
         this.opList = [];
     }
@@ -41,7 +42,7 @@ class HTMLCategory {
         const catName = "cat" + this.name.replace(/[\s/\-:_]/g, "");
         let html = `<div class="panel category">
         <a class="category-title" data-toggle="collapse" data-target="#${catName}">
-            ${this.name}
+            ${this.displayName}
             <span class="op-count hidden">
                 ${this.opList.length}
             </span>
@@ -58,5 +59,25 @@ class HTMLCategory {
     }
 
 }
+
+const CATEGORY_TRANSLATIONS = {
+    "Favourites": "收藏夹",
+    "Data format": "数据格式",
+    "Encryption / Encoding": "加密 / 编码",
+    "Public Key": "公钥",
+    "Arithmetic / Logic": "算术 / 逻辑",
+    "Networking": "网络",
+    "Language": "语言",
+    "Utils": "工具",
+    "Date / Time": "日期 / 时间",
+    "Extractors": "提取",
+    "Compression": "压缩",
+    "Hashing": "哈希",
+    "Code tidy": "代码整理",
+    "Forensics": "取证",
+    "Multimedia": "多媒体",
+    "Other": "其他",
+    "Flow control": "流程控制"
+};
 
 export default HTMLCategory;

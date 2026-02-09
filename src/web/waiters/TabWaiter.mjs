@@ -98,7 +98,7 @@ class TabWaiter {
 
         const newTabContent = document.createElement("div");
         newTabContent.classList.add(`${io}-tab-content`);
-        newTabContent.innerText = `Tab ${inputNum.toString()}`;
+        newTabContent.innerText = `标签 ${inputNum.toString()}`;
         newTabContent.addEventListener("wheel", this.manager[io].scrollTab.bind(this.manager[io]), {passive: false});
         newTab.appendChild(newTabContent);
 
@@ -217,10 +217,10 @@ class TabWaiter {
         const tab = this.getTabItem(inputNum, io);
         if (tab === null) return;
 
-        let headerData = `Tab ${inputNum}`;
+        let headerData = `标签 ${inputNum}`;
         if (data.length > 0) {
             headerData = data.slice(0, 100);
-            headerData = `${inputNum}: ${headerData}`;
+            headerData = `${inputNum}：${headerData}`;
         }
         tab.firstElementChild.innerText = headerData;
     }
