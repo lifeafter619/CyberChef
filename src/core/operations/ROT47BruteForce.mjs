@@ -19,7 +19,7 @@ class ROT47BruteForce extends Operation {
 
         this.name = "ROT47 Brute Force";
         this.module = "Default";
-        this.description = "Try all meaningful amounts for ROT47.<br><br>Optionally you can enter your known plaintext (crib) to filter the result.";
+        this.description = "尝试 ROT47 的所有有效位移量。<br><br>可选地输入已知明文（辅助字符串）来过滤结果。";
         this.infoURL = "https://wikipedia.org/wiki/ROT13#Variants";
         this.inputType = "byteArray";
         this.outputType = "string";

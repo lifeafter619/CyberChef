@@ -22,7 +22,7 @@ class NormaliseUnicode extends Operation {
 
         this.name = "Normalise Unicode";
         this.module = "Encodings";
-        this.description = "Transform Unicode characters to one of the Normalisation Forms";
+        this.description = "将 Unicode 字符转换为指定的规范化形式";
         this.infoURL = "https://wikipedia.org/wiki/Unicode_equivalence#Normal_forms";
         this.inputType = "string";
         this.outputType = "string";

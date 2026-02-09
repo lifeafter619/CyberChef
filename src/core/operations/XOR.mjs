@@ -21,7 +21,7 @@ class XOR extends Operation {
 
         this.name = "XOR";
         this.module = "Default";
-        this.description = "XOR the input with the given key.<br>e.g. <code>fe023da5</code><br><br><strong>Options</strong><br><u>Null preserving:</u> If the current byte is 0x00 or the same as the key, skip it.<br><br><u>Scheme:</u><ul><li>Standard - key is unchanged after each round</li><li>Input differential - key is set to the value of the previous unprocessed byte</li><li>Output differential - key is set to the value of the previous processed byte</li><li>Cascade - key is set to the input byte shifted by one</li></ul>";
+        this.description = "用给定的密钥对输入进行异或。<br>例如：<code>fe023da5</code><br><br><strong>选项</strong><br><u>空值保持：</u>若当前字节为 0x00 或与密钥相同，则跳过。<br><br><u>方案：</u><ul><li>Standard - 每轮后密钥不变</li><li>Input differential - 密钥设为上一个未处理字节的值</li><li>Output differential - 密钥设为上一个已处理字节的值</li><li>Cascade - 密钥设为输入字节移位一位</li></ul>";
         this.infoURL = "https://wikipedia.org/wiki/XOR";
         this.inputType = "ArrayBuffer";
         this.outputType = "byteArray";

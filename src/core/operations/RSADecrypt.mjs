@@ -22,7 +22,7 @@ class RSADecrypt extends Operation {
 
         this.name = "RSA Decrypt";
         this.module = "Ciphers";
-        this.description = "Decrypt an RSA encrypted message with a PEM encoded private key.";
+        this.description = "使用 PEM 编码的 RSA 私钥解密消息。";
         this.infoURL = "https://wikipedia.org/wiki/RSA_(cryptosystem)";
         this.inputType = "string";
         this.outputType = "string";

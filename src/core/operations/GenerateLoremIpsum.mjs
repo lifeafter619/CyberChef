@@ -21,7 +21,7 @@ class GenerateLoremIpsum extends Operation {
 
         this.name = "Generate Lorem Ipsum";
         this.module = "Default";
-        this.description = "Generate varying length lorem ipsum placeholder text.";
+        this.description = "生成不同长度的 Lorem Ipsum 占位文本。";
         this.infoURL = "https://wikipedia.org/wiki/Lorem_ipsum";
         this.inputType = "string";
         this.outputType = "string";

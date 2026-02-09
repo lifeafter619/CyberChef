@@ -23,7 +23,7 @@ class Sigaba extends Operation {
 
         this.name = "SIGABA";
         this.module = "Bletchley";
-        this.description = "Encipher/decipher with the WW2 SIGABA machine. <br><br>SIGABA, otherwise known as ECM Mark II, was used by the United States for message encryption during WW2 up to the 1950s. It was developed in the 1930s by the US Army and Navy, and has up to this day never been broken. Consisting of 15 rotors: 5 cipher rotors and 10 rotors (5 control rotors and 5 index rotors) controlling the stepping of the cipher rotors, the rotor stepping for SIGABA is much more complex than other rotor machines of its time, such as Enigma. All example rotor wirings are random example sets.<br><br>To configure rotor wirings, for the cipher and control rotors enter a string of letters which map from A to Z, and for the index rotors enter a sequence of numbers which map from 0 to 9. Note that encryption is not the same as decryption, so first choose the desired mode. <br><br> Note: Whilst this has been tested against other software emulators, it has not been tested against hardware.";
+        this.description = "使用二战时期的 SIGABA 机器进行加解密。<br><br>SIGABA（亦称 ECM Mark II）在二战期间至 1950 年代由美国用于信息加密。该机器由美军与海军在 1930 年代开发，至今未被攻破。它由 15 个转子组成：5 个密码转子以及 10 个用于控制密码转子步进的转子（5 个控制转子与 5 个索引转子）。与同时代的其他转子机（如 Enigma）相比，SIGABA 的步进机制更为复杂。所有示例转子接线为随机示例集。<br><br>要配置转子接线：对于密码转子与控制转子，输入从 A 到 Z 的字母映射字符串；对于索引转子，输入从 0 到 9 的数字序列。请注意，加密与解密并不相同，请先选择所需模式。<br><br>注：该实现已与其他软件仿真器对比测试，但尚未与硬件比对。";
         this.infoURL = "https://wikipedia.org/wiki/SIGABA";
         this.inputType = "string";
         this.outputType = "string";

@@ -22,7 +22,7 @@ class YARARules extends Operation {
 
         this.name = "YARA Rules";
         this.module = "Yara";
-        this.description = "YARA is a tool developed at VirusTotal, primarily aimed at helping malware researchers to identify and classify malware samples. It matches based on rules specified by the user containing textual or binary patterns and a boolean expression. For help on writing rules, see the <a href='https://yara.readthedocs.io/en/latest/writingrules.html'>YARA documentation.</a>";
+        this.description = "YARA 是由 VirusTotal 开发的工具，主要用于帮助恶意软件研究人员识别和分类恶意样本。它根据用户指定的规则进行匹配，这些规则包含文本或二进制模式以及布尔表达式。关于编写规则的帮助，请参阅 <a href='https://yara.readthedocs.io/en/latest/writingrules.html'>YARA 文档</a>。";
         this.infoURL = "https://wikipedia.org/wiki/YARA";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

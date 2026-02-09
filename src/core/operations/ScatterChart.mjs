@@ -28,7 +28,7 @@ class ScatterChart extends Operation {
 
         this.name = "Scatter chart";
         this.module = "Charts";
-        this.description = "Plots two-variable data as single points on a graph.";
+        this.description = "将双变量数据以单个点绘制在图表上。";
         this.infoURL = "https://wikipedia.org/wiki/Scatter_plot";
         this.inputType = "string";
         this.outputType = "html";

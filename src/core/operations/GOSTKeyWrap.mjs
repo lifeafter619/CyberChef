@@ -23,7 +23,7 @@ class GOSTKeyWrap extends Operation {
 
         this.name = "GOST Key Wrap";
         this.module = "Ciphers";
-        this.description = "A key wrapping algorithm for protecting keys in untrusted storage using one of the GOST block cipers.";
+        this.description = "使用 GOST 分组密码进行密钥封装，以在不受信任的存储中保护密钥。";
         this.infoURL = "https://wikipedia.org/wiki/GOST_(block_cipher)";
         this.inputType = "string";
         this.outputType = "string";

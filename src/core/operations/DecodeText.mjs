@@ -22,9 +22,9 @@ class DecodeText extends Operation {
         this.name = "Decode text";
         this.module = "Encodings";
         this.description = [
-            "Decodes text from the chosen character encoding.",
+            "从所选字符编码解码文本。",
             "<br><br>",
-            "Supported charsets are:",
+            "支持的字符集：",
             "<ul>",
             Object.keys(CHR_ENC_CODE_PAGES).map(e => `<li>${e}</li>`).join("\n"),
             "</ul>",

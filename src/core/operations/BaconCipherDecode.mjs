@@ -23,7 +23,7 @@ class BaconCipherDecode extends Operation {
 
         this.name = "Bacon Cipher Decode";
         this.module = "Default";
-        this.description = "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.";
+        this.description = "培根密码是弗朗西斯·培根于 1605 年设计的一种隐写方法。消息隐藏在文本的呈现方式中，而非其内容。";
         this.infoURL = "https://wikipedia.org/wiki/Bacon%27s_cipher";
         this.inputType = "string";
         this.outputType = "string";

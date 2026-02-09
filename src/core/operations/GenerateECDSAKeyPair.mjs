@@ -21,7 +21,7 @@ class GenerateECDSAKeyPair extends Operation {
 
         this.name = "Generate ECDSA Key Pair";
         this.module = "Ciphers";
-        this.description = `Generate an ECDSA key pair with a given Curve.<br><br>${cryptNotice}`;
+        this.description = `生成指定椭圆曲线的 ECDSA 密钥对。<br><br>${cryptNotice}`;
         this.infoURL = "https://wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm";
         this.inputType = "string";
         this.outputType = "string";

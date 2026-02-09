@@ -22,7 +22,7 @@ class LZStringDecompress extends Operation {
 
         this.name = "LZString Decompress";
         this.module = "Compression";
-        this.description = "Decompresses data that was compressed with lz-string.";
+        this.description = "解压由 lz-string 压缩的数据。";
         this.infoURL = "https://pieroxy.net/blog/pages/lz-string/index.html";
         this.inputType = "string";
         this.outputType = "string";

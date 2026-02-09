@@ -19,7 +19,7 @@ class TakeBytes extends Operation {
 
         this.name = "Take bytes";
         this.module = "Default";
-        this.description = "Takes a slice of the specified number of bytes from the data. Negative values are allowed.";
+        this.description = "从数据中截取指定数量的字节片段。允许使用负值。";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";
         this.args = [

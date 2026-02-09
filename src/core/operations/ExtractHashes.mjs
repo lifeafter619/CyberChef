@@ -20,7 +20,7 @@ class ExtractHashes extends Operation {
 
         this.name = "Extract hashes";
         this.module = "Regex";
-        this.description = "Extracts potential hashes based on hash character length";
+        this.description = "根据哈希字符长度提取潜在的哈希值";
         this.infoURL = "https://wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions";
         this.inputType = "string";
         this.outputType = "string";

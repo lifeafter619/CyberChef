@@ -21,7 +21,7 @@ class CSVToJSON extends Operation {
 
         this.name = "CSV to JSON";
         this.module = "Default";
-        this.description = "Converts a CSV file to JSON format.";
+        this.description = "将 CSV 文件转换为 JSON 格式。";
         this.infoURL = "https://wikipedia.org/wiki/Comma-separated_values";
         this.inputType = "string";
         this.outputType = "JSON";

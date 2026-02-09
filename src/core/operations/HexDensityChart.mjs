@@ -31,7 +31,7 @@ class HexDensityChart extends Operation {
 
         this.name = "Hex Density chart";
         this.module = "Charts";
-        this.description = "Hex density charts are used in a similar way to scatter charts, however rather than rendering tens of thousands of points, it groups the points into a few hundred hexagons to show the distribution.";
+        this.description = "六边形密度图与散点图用法类似，但不直接渲染成千上万的点，而是将这些点聚合为数百个六边形，以展示分布情况。";
         this.inputType = "string";
         this.outputType = "html";
         this.args = [

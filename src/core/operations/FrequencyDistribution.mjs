@@ -21,7 +21,7 @@ class FrequencyDistribution extends Operation {
 
         this.name = "Frequency distribution";
         this.module = "Default";
-        this.description = "Displays the distribution of bytes in the data as a graph.";
+        this.description = "以图表形式显示数据中各字节的分布情况。";
         this.infoURL = "https://wikipedia.org/wiki/Frequency_distribution";
         this.inputType = "ArrayBuffer";
         this.outputType = "json";

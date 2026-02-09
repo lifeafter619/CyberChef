@@ -23,7 +23,7 @@ class GOSTKeyUnwrap extends Operation {
 
         this.name = "GOST Key Unwrap";
         this.module = "Ciphers";
-        this.description = "A decryptor for keys wrapped using one of the GOST block ciphers.";
+        this.description = "用于解密通过 GOST 分组密码封装的密钥。";
         this.infoURL = "https://wikipedia.org/wiki/GOST_(block_cipher)";
         this.inputType = "string";
         this.outputType = "string";

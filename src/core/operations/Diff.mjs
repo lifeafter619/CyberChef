@@ -22,7 +22,7 @@ class Diff extends Operation {
 
         this.name = "Diff";
         this.module = "Diff";
-        this.description = "Compares two inputs (separated by the specified delimiter) and highlights the differences between them.";
+        this.description = "比较两个输入（由指定分隔符分隔），并高亮显示它们之间的差异。";
         this.infoURL = "https://wikipedia.org/wiki/File_comparison";
         this.inputType = "string";
         this.outputType = "html";

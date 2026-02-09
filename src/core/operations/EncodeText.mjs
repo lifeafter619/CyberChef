@@ -22,9 +22,9 @@ class EncodeText extends Operation {
         this.name = "Encode text";
         this.module = "Encodings";
         this.description = [
-            "Encodes text into the chosen character encoding.",
+            "将文本编码为所选的字符编码。",
             "<br><br>",
-            "Supported charsets are:",
+            "支持的字符集：",
             "<ul>",
             Object.keys(CHR_ENC_CODE_PAGES).map(e => `<li>${e}</li>`).join("\n"),
             "</ul>",

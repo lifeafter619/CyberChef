@@ -19,7 +19,7 @@ class Sleep extends Operation {
 
         this.name = "Sleep";
         this.module = "Default";
-        this.description = "Sleep causes the recipe to wait for a specified number of milliseconds before continuing execution.";
+        this.description = "使配方在继续执行前等待指定毫秒数。";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";
         this.args = [

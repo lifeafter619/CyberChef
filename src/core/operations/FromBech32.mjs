@@ -21,7 +21,7 @@ class FromBech32 extends Operation {
 
         this.name = "From Bech32";
         this.module = "Default";
-        this.description = "Bech32 is an encoding scheme primarily used for Bitcoin SegWit addresses (BIP-0173). It uses a 32-character alphabet that excludes easily confused characters (1, b, i, o) and includes a checksum for error detection.<br><br>Bech32m (BIP-0350) is an updated version used for Bitcoin Taproot addresses.<br><br>Auto-detect will attempt Bech32 first, then Bech32m if the checksum fails.<br><br>Output format options allow you to see the Human-Readable Part (HRP) along with the decoded data.";
+        this.description = "Bech32 是一种主要用于比特币 SegWit 地址（BIP-0173）的编码方案。它使用 32 个字符的字母表，排除易混淆字符（1、b、i、o），并包含用于错误检测的校验和。<br><br>Bech32m（BIP-0350）是用于比特币 Taproot 地址的更新版本。<br><br>自动检测会先尝试 Bech32，校验和失败时再尝试 Bech32m。<br><br>输出格式选项可显示人类可读部分（HRP）以及解码后的数据。";
         this.infoURL = "https://wikipedia.org/wiki/Bech32";
         this.inputType = "string";
         this.outputType = "string";

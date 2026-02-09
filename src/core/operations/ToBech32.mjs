@@ -21,7 +21,7 @@ class ToBech32 extends Operation {
 
         this.name = "To Bech32";
         this.module = "Default";
-        this.description = "Bech32 is an encoding scheme primarily used for Bitcoin SegWit addresses (BIP-0173). It uses a 32-character alphabet that excludes easily confused characters (1, b, i, o) and includes a checksum for error detection.<br><br>Bech32m (BIP-0350) is an updated version that fixes a weakness in the original Bech32 checksum and is used for Bitcoin Taproot addresses.<br><br>The Human-Readable Part (HRP) identifies the network or purpose (e.g., 'bc' for Bitcoin mainnet, 'tb' for testnet, 'age' for AGE encryption keys).<br><br>Maximum output length is 90 characters as per specification.";
+        this.description = "Bech32 是一种主要用于比特币 SegWit 地址（BIP-0173）的编码方案。它使用 32 个字符的字母表，排除易混淆字符（1、b、i、o），并包含用于错误检测的校验和。<br><br>Bech32m（BIP-0350）是修复原始 Bech32 校验和弱点的更新版本，用于比特币 Taproot 地址。<br><br>人类可读部分（HRP）用于标识网络或用途（例如：'bc' 表示比特币主网，'tb' 表示测试网，'age' 表示 AGE 加密密钥）。<br><br>根据规范，最大输出长度为 90 个字符。";
         this.infoURL = "https://wikipedia.org/wiki/Bech32";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

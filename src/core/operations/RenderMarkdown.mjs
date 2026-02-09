@@ -21,7 +21,7 @@ class RenderMarkdown extends Operation {
 
         this.name = "Render Markdown";
         this.module = "Code";
-        this.description = "Renders input Markdown as HTML. HTML rendering is disabled to avoid XSS.";
+        this.description = "将输入的 Markdown 渲染为 HTML。为避免 XSS，禁用原生 HTML 渲染。";
         this.infoURL = "https://wikipedia.org/wiki/Markdown";
         this.inputType = "string";
         this.outputType = "html";

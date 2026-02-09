@@ -22,7 +22,7 @@ class ChangeIPFormat extends Operation {
 
         this.name = "Change IP format";
         this.module = "Default";
-        this.description = "Convert an IP address from one format to another, e.g. <code>172.20.23.54</code> to <code>ac141736</code>";
+        this.description = "将 IP 地址从一种格式转换为另一种，例如 <code>172.20.23.54</code> 转为 <code>ac141736</code>";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [

@@ -22,7 +22,7 @@ class Argon2 extends Operation {
 
         this.name = "Argon2";
         this.module = "Crypto";
-        this.description = "Argon2 is a key derivation function that was selected as the winner of the Password Hashing Competition in July 2015. It was designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich from the University of Luxembourg.<br><br>Enter the password in the input to generate its hash.";
+        this.description = "Argon2 是一种密钥派生函数，于 2015 年 7 月在密码哈希竞赛中获胜，由卢森堡大学的 Alex Biryukov、Daniel Dinu 和 Dmitry Khovratovich 设计。<br><br>在输入中输入密码以生成其哈希值。";
         this.infoURL = "https://wikipedia.org/wiki/Argon2";
         this.inputType = "string";
         this.outputType = "string";

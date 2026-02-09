@@ -20,7 +20,7 @@ class FromModhex extends Operation {
 
         this.name = "From Modhex";
         this.module = "Default";
-        this.description = "Converts a modhex byte string back into its raw value.";
+        this.description = "将 modhex 字节串转换回其原始值。";
         this.infoURL = "https://en.wikipedia.org/wiki/YubiKey#ModHex";
         this.inputType = "string";
         this.outputType = "byteArray";

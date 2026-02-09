@@ -23,7 +23,7 @@ class GOSTVerify extends Operation {
 
         this.name = "GOST Verify";
         this.module = "Ciphers";
-        this.description = "Verify the signature of a plaintext message using one of the GOST block ciphers. Enter the signature in the MAC field.";
+        this.description = "使用 GOST 分组密码验证明文消息的签名。请在 MAC 字段输入签名。";
         this.infoURL = "https://wikipedia.org/wiki/GOST_(block_cipher)";
         this.inputType = "string";
         this.outputType = "string";

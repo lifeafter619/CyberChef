@@ -24,7 +24,7 @@ class CoverImage extends Operation {
 
         this.name = "Cover Image";
         this.module = "Image";
-        this.description = "Scales the image to the given width and height, keeping the aspect ratio. The image may be clipped.";
+        this.description = "将图像缩放到给定宽高并保持纵横比。图像可能会被裁剪。";
         this.infoURL = "";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";

@@ -21,7 +21,7 @@ class ExtractEmailAddresses extends Operation {
 
         this.name = "Extract email addresses";
         this.module = "Regex";
-        this.description = "Extracts all email addresses from the input.";
+        this.description = "从输入中提取所有电子邮箱地址。";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [

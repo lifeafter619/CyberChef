@@ -19,7 +19,7 @@ class DropBytes extends Operation {
 
         this.name = "Drop bytes";
         this.module = "Default";
-        this.description = "Cuts a slice of the specified number of bytes out of the data. Negative values are allowed.";
+        this.description = "从数据中裁剪指定数量的字节。允许负数。";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";
         this.args = [

@@ -20,7 +20,7 @@ class StripHTMLTags extends Operation {
 
         this.name = "Strip HTML tags";
         this.module = "Default";
-        this.description = "Removes all HTML tags from the input.";
+        this.description = "移除输入中的所有 HTML 标签。";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [

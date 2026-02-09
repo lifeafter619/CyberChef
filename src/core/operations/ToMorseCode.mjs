@@ -21,7 +21,7 @@ class ToMorseCode extends Operation {
 
         this.name = "To Morse Code";
         this.module = "Default";
-        this.description = "Translates alphanumeric characters into International Morse Code.<br><br>Ignores non-Morse characters.<br><br>e.g. <code>SOS</code> becomes <code>... --- ...</code>";
+        this.description = "将字母数字字符翻译为国际摩斯电码。<br><br>忽略非摩斯字符。<br><br>例如：<code>SOS</code> 变为 <code>... --- ...</code>";
         this.infoURL = "https://wikipedia.org/wiki/Morse_code";
         this.inputType = "string";
         this.outputType = "string";

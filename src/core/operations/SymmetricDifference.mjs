@@ -21,7 +21,7 @@ class SymmetricDifference extends Operation {
 
         this.name = "Symmetric Difference";
         this.module = "Default";
-        this.description = "Calculates the symmetric difference of two sets.";
+        this.description = "计算两个集合的对称差集。";
         this.infoURL = "https://wikipedia.org/wiki/Symmetric_difference";
         this.inputType = "string";
         this.outputType = "string";

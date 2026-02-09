@@ -22,7 +22,7 @@ class FromFloat extends Operation {
 
         this.name = "From Float";
         this.module = "Default";
-        this.description = "Convert from IEEE754 Floating Point Numbers";
+        this.description = "从 IEEE754 浮点数转换为字节序列。";
         this.infoURL = "https://wikipedia.org/wiki/IEEE_754";
         this.inputType = "string";
         this.outputType = "byteArray";

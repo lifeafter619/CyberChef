@@ -22,7 +22,7 @@ class SM2Encrypt extends Operation {
 
         this.name = "SM2 Encrypt";
         this.module = "Crypto";
-        this.description = "Encrypts a message utilizing the SM2 standard";
+        this.description = "使用 SM2 标准对消息进行加密";
         this.infoURL = ""; // Usually a Wikipedia link. Remember to remove localisation (i.e. https://wikipedia.org/etc rather than https://en.wikipedia.org/etc)
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

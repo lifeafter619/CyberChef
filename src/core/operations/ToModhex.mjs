@@ -21,7 +21,7 @@ class ToModhex extends Operation {
 
         this.name = "To Modhex";
         this.module = "Default";
-        this.description = "Converts the input string to modhex bytes separated by the specified delimiter.";
+        this.description = "将输入字符串转换为按指定分隔符分隔的 Modhex 字节。";
         this.infoURL = "https://en.wikipedia.org/wiki/YubiKey#ModHex";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

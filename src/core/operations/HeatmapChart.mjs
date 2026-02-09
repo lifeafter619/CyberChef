@@ -29,7 +29,7 @@ class HeatmapChart extends Operation {
 
         this.name = "Heatmap chart";
         this.module = "Charts";
-        this.description = "A heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.";
+        this.description = "热力图是一种数据可视化图表，将矩阵中的各个数值用颜色表示。";
         this.infoURL = "https://wikipedia.org/wiki/Heat_map";
         this.inputType = "string";
         this.outputType = "html";

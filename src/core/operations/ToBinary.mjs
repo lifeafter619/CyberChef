@@ -22,7 +22,7 @@ class ToBinary extends Operation {
 
         this.name = "To Binary";
         this.module = "Default";
-        this.description = "Displays the input data as a binary string.<br><br>e.g. <code>Hi</code> becomes <code>01001000 01101001</code>";
+        this.description = "以二进制字符串显示输入数据。<br><br>例如：<code>Hi</code> 变为 <code>01001000 01101001</code>";
         this.infoURL = "https://wikipedia.org/wiki/Binary_code";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

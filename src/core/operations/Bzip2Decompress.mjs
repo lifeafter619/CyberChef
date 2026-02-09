@@ -22,7 +22,7 @@ class Bzip2Decompress extends Operation {
 
         this.name = "Bzip2 Decompress";
         this.module = "Compression";
-        this.description = "Decompresses data using the Bzip2 algorithm.";
+        this.description = "使用 Bzip2 算法解压数据。";
         this.infoURL = "https://wikipedia.org/wiki/Bzip2";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";

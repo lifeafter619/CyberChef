@@ -21,7 +21,7 @@ class JPathExpression extends Operation {
 
         this.name = "JPath expression";
         this.module = "Code";
-        this.description = "Extract information from a JSON object with a JPath query.";
+        this.description = "使用 JPath 查询从 JSON 对象中提取信息。";
         this.infoURL = "http://goessner.net/articles/JsonPath/";
         this.inputType = "string";
         this.outputType = "string";

@@ -20,11 +20,11 @@ class RAKE extends Operation {
         this.name = "RAKE";
         this.module = "Default";
         this.description = [
-            "Rapid Keyword Extraction (RAKE)",
+            "快速关键字抽取（RAKE）",
             "<br><br>",
-            "RAKE is a domain-independent keyword extraction algorithm in Natural Language Processing.",
+            "RAKE 是一种与领域无关的自然语言处理关键字抽取算法。",
             "<br><br>",
-            "The list of stop words are from the NLTK python package",
+            "停用词列表来自 NLTK Python 包",
         ].join("\n");
         this.inputType = "string";
         this.outputType = "string";

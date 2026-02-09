@@ -19,7 +19,7 @@ class ConvertMass extends Operation {
 
         this.name = "Convert mass";
         this.module = "Default";
-        this.description = "Converts a unit of mass to another format.";
+        this.description = "将质量单位转换为另一种格式。";
         this.infoURL = "https://wikipedia.org/wiki/Orders_of_magnitude_(mass)";
         this.inputType = "BigNumber";
         this.outputType = "BigNumber";

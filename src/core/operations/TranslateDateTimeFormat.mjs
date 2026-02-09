@@ -22,7 +22,7 @@ class TranslateDateTimeFormat extends Operation {
 
         this.name = "Translate DateTime Format";
         this.module = "Default";
-        this.description = "Parses a datetime string in one format and re-writes it in another.<br><br>Run with no input to see the relevant format string examples.";
+        this.description = "解析一种格式的日期时间字符串并将其改写为另一种格式。<br><br>在无输入时运行以查看相关格式字符串示例。";
         this.infoURL = "https://momentjs.com/docs/#/parsing/string-format/";
         this.inputType = "string";
         this.outputType = "string";

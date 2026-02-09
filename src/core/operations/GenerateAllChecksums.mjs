@@ -25,7 +25,7 @@ class GenerateAllChecksums extends Operation {
 
         this.name = "Generate all checksums";
         this.module = "Crypto";
-        this.description = "Generates all available checksums for the input.";
+        this.description = "为输入生成所有可用的校验和。";
         this.infoURL = "https://wikipedia.org/wiki/Checksum";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

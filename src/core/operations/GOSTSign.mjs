@@ -23,7 +23,7 @@ class GOSTSign extends Operation {
 
         this.name = "GOST Sign";
         this.module = "Ciphers";
-        this.description = "Sign a plaintext message using one of the GOST block ciphers.";
+        this.description = "使用 GOST 分组密码对明文消息进行签名。";
         this.infoURL = "https://wikipedia.org/wiki/GOST_(block_cipher)";
         this.inputType = "string";
         this.outputType = "string";

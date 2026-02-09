@@ -23,7 +23,7 @@ class CMAC extends Operation {
 
         this.name = "CMAC";
         this.module = "Crypto";
-        this.description = "CMAC is a block-cipher based message authentication code algorithm.<br><br>RFC4493 defines AES-CMAC that uses AES encryption with a 128-bit key.<br>NIST SP 800-38B suggests usages of AES with other key lengths and Triple DES.";
+        this.description = "CMAC 是基于分组密码的消息认证码算法。<br><br>RFC4493 定义了使用 128 位密钥的 AES-CMAC。<br>NIST SP 800-38B 建议使用不同密钥长度的 AES 以及 3DES。";
         this.infoURL = "https://wikipedia.org/wiki/CMAC";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

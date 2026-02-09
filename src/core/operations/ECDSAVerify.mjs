@@ -24,7 +24,7 @@ class ECDSAVerify extends Operation {
 
         this.name = "ECDSA Verify";
         this.module = "Ciphers";
-        this.description = "Verify a message against a signature and a public PEM encoded EC key.";
+        this.description = "使用PEM编码的EC公钥与签名对消息进行验证。";
         this.infoURL = "https://wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm";
         this.inputType = "string";
         this.outputType = "string";

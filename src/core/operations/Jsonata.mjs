@@ -21,7 +21,7 @@ class JsonataQuery extends Operation {
         this.name = "Jsonata Query";
         this.module = "Code";
         this.description =
-            "Query and transform JSON data with a jsonata query.";
+            "使用 Jsonata 查询对 JSON 数据进行查询与转换。";
         this.infoURL = "https://docs.jsonata.org/overview.html";
         this.inputType = "string";
         this.outputType = "string";

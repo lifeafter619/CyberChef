@@ -21,7 +21,7 @@ class DateTimeDelta extends Operation {
 
         this.name = "DateTime Delta";
         this.module = "Default";
-        this.description = "Calculates a new DateTime value given an input DateTime value and a time difference (delta) from the input DateTime value.";
+        this.description = "根据输入的日期时间与时间差（delta）计算新的日期时间值。";
         this.inputType = "string";
         this.outputType = "html";
         this.args = [
