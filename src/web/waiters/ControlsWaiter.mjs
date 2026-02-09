@@ -63,7 +63,10 @@ class ControlsWaiter {
      */
     bakeClick() {
         const btnBake = document.getElementById("bake");
-        const bakeState = btnBake.getAttribute("data-bake-state");
+        const bakeState = btnBake.getAttribute("data-bake-state") || "bake";
+        if (!btnBake.getAttribute("data-bake-state")) {
+            btnBake.setAttribute("data-bake-state", bakeState);
+        }
         if (bakeState === "bake") {
             this.app.manager.input.bakeAll();
         } else if (bakeState === "cancel") {

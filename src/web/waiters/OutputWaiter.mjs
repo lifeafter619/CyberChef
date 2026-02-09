@@ -1532,6 +1532,9 @@ class OutputWaiter {
      */
     maximiseOutputClick(e) {
         const el = e.target.id === "maximise-output" ? e.target : e.target.parentNode;
+        if (!el.getAttribute("data-maximised")) {
+            el.setAttribute("data-maximised", "false");
+        }
         const isMaximised = el.getAttribute("data-maximised") === "true";
 
         if (!isMaximised) {

@@ -1592,8 +1592,9 @@ class InputWaiter {
 
         const filter = document.getElementById("input-filter").value;
         const filterButton = document.getElementById("input-filter-button");
-        const filterType = filterButton.getAttribute("data-filter") || "content";
-        if (!filterButton.getAttribute("data-filter")) {
+        let filterType = filterButton.getAttribute("data-filter");
+        if (!filterType) {
+            filterType = "content";
             filterButton.setAttribute("data-filter", filterType);
         }
         const numResults = parseInt(document.getElementById("input-num-results").value, 10);
