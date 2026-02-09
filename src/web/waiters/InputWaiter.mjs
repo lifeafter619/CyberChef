@@ -1592,7 +1592,7 @@ class InputWaiter {
 
         const filter = document.getElementById("input-filter").value;
         const filterButton = document.getElementById("input-filter-button");
-        const filterType = filterButton.getAttribute("data-filter") || filterButton.innerText;
+        const filterType = filterButton.getAttribute("data-filter") || "content";
         const numResults = parseInt(document.getElementById("input-num-results").value, 10);
 
         this.inputWorker.postMessage({
@@ -1616,7 +1616,7 @@ class InputWaiter {
     filterOptionClick(mouseEvent) {
         const filterButton = document.getElementById("input-filter-button");
         filterButton.innerText = mouseEvent.target.innerText;
-        filterButton.setAttribute("data-filter", mouseEvent.target.getAttribute("data-filter") || mouseEvent.target.innerText);
+        filterButton.setAttribute("data-filter", mouseEvent.target.getAttribute("data-filter") || "content");
         this.filterTabSearch();
     }
 
