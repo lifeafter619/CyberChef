@@ -1518,14 +1518,12 @@ export function sendStatusMessage(msg) {
 export function translateErrorMessage(msg) {
     if (!msg || typeof msg !== "string") return msg;
     const directMap = new Map([
-        ["Invalid file type.", "无效的文件类型。"],
-        ["Invalid input file type.", "无效的输入文件类型。"],
-        ["Invalid input format.", "无效的输入格式。"],
-        ["Invalid input XML.", "无效的输入 XML。"],
-        ["Invalid input file format.", "无效的输入文件格式。"],
-        ["Invalid or unrecognised file type", "无效或无法识别的文件类型"],
         ["Invalid file type", "无效的文件类型"],
+        ["Invalid input file type", "无效的输入文件类型"],
+        ["Invalid input format", "无效的输入格式"],
         ["Invalid input XML", "无效的输入 XML"],
+        ["Invalid input file format", "无效的输入文件格式"],
+        ["Invalid or unrecognised file type", "无效或无法识别的文件类型"],
         ["Invalid input JSON", "无效的输入 JSON"],
         ["Not handshake data.", "不是握手数据。"],
         ["Incorrect handshake length.", "握手长度不正确。"],
@@ -1549,14 +1547,19 @@ export function translateErrorMessage(msg) {
         ["No matches.", "未找到匹配项。"],
     ]);
 
-    if (directMap.has(msg)) {
-        return directMap.get(msg);
+    const normalizedMsg = msg.trim();
+    const strippedMsg = normalizedMsg.endsWith(".") ? normalizedMsg.slice(0, -1) : normalizedMsg;
+    if (directMap.has(normalizedMsg)) {
+        return directMap.get(normalizedMsg);
+    }
+    if (directMap.has(strippedMsg)) {
+        return directMap.get(strippedMsg);
     }
 
     const patterns = [
         {
-            regex: /^Invalid input JSON: (.+)$/,
-            replace: "无效的输入 JSON：$1"
+            regex: /^Invalid input JSON(?::\s*(.+))?$/s,
+            replace: (match, details) => details ? `无效的输入 JSON：${details}` : "无效的输入 JSON"
         },
         {
             regex: /^Unable to parse YAML: (.+)$/s,
@@ -1667,10 +1670,6 @@ export function translateErrorMessage(msg) {
             replace: "锐化图像出错。（$1）"
         },
         {
-            regex: /^Error: (.+)$/s,
-            replace: "错误：$1"
-        },
-        {
             regex: /^Unknown granularity value: (.+)$/s,
             replace: "未知的粒度值：$1"
         },
@@ -1709,12 +1708,16 @@ export function translateErrorMessage(msg) {
         {
             regex: /^Unsupported JWK key type '(.+)'$/,
             replace: "不支持的 JWK 密钥类型 '$1'"
+        },
+        {
+            regex: /^Error: (.+)$/s,
+            replace: "错误：$1"
         }
     ];
 
     for (const {regex, replace} of patterns) {
         if (regex.test(msg)) {
-            return msg.replace(regex, replace);
+            return typeof replace === "function" ? replace(...msg.match(regex)) : msg.replace(regex, replace);
         }
     }
 
