@@ -1525,26 +1525,24 @@ export function translateErrorMessage(msg) {
         ["Invalid input file format", "无效的输入文件格式"],
         ["Invalid or unrecognised file type", "无效或无法识别的文件类型"],
         ["Invalid input JSON", "无效的输入 JSON"],
-        ["Not handshake data.", "不是握手数据。"],
-        ["Incorrect handshake length.", "握手长度不正确。"],
-        ["Not a Client Hello.", "不是 Client Hello。"],
-        ["Not a Server Hello.", "不是 Server Hello。"],
-        ["Not enough data in Client Hello.", "Client Hello 中数据不足。"],
-        ["Not enough data in Server Hello.", "Server Hello 中数据不足。"],
-        ["Not a Key Exchange Init.", "不是密钥交换初始化。"],
-        ["Incorrect packet length.", "数据包长度不正确。"],
-        ["Please enter a valid image file.", "请输入有效的图像文件。"],
-        ["Please enter a public key.", "请输入公钥。"],
-        ["Please enter a private key.", "请输入私钥。"],
-        ["Please provide an input.", "请提供输入。"],
-        ["Unsupported public key type", "不支持的公钥类型"],
-        ["Unsupported public key type.", "不支持的公钥类型。"],
-        ["Unable to decrypt using this key", "无法使用此密钥解密"],
-        ["Unable to decrypt using this key.", "无法使用此密钥解密。"],
-        ["Unable to decrypt input with these parameters.", "无法使用这些参数解密输入。"],
+        ["Not handshake data", "不是握手数据。"],
+        ["Incorrect handshake length", "握手长度不正确。"],
+        ["Not a Client Hello", "不是 Client Hello。"],
+        ["Not a Server Hello", "不是 Server Hello。"],
+        ["Not enough data in Client Hello", "Client Hello 中数据不足。"],
+        ["Not enough data in Server Hello", "Server Hello 中数据不足。"],
+        ["Not a Key Exchange Init", "不是密钥交换初始化。"],
+        ["Incorrect packet length", "数据包长度不正确。"],
+        ["Please enter a valid image file", "请输入有效的图像文件。"],
+        ["Please enter a public key", "请输入公钥。"],
+        ["Please enter a private key", "请输入私钥。"],
+        ["Please provide an input", "请提供输入。"],
+        ["Unsupported public key type", "不支持的公钥类型。"],
+        ["Unable to decrypt using this key", "无法使用此密钥解密。"],
+        ["Unable to decrypt input with these parameters", "无法使用这些参数解密输入。"],
         ["No input", "无输入"],
         ["No match", "未匹配"],
-        ["No matches.", "未找到匹配项。"],
+        ["No matches", "未找到匹配项。"],
     ]);
 
     const normalizedMsg = msg.trim();
@@ -1716,8 +1714,9 @@ export function translateErrorMessage(msg) {
     ];
 
     for (const {regex, replace} of patterns) {
-        if (regex.test(msg)) {
-            return typeof replace === "function" ? replace(...msg.match(regex)) : msg.replace(regex, replace);
+        const match = msg.match(regex);
+        if (match) {
+            return typeof replace === "function" ? replace(...match) : msg.replace(regex, replace);
         }
     }
 
