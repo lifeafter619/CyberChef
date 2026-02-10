@@ -1510,6 +1510,154 @@ export function sendStatusMessage(msg) {
 }
 
 /**
+ * Translate error messages to Chinese for display.
+ *
+ * @param {string} msg
+ * @returns {string}
+ */
+export function translateErrorMessage(msg) {
+    if (!msg || typeof msg !== "string") return msg;
+    const directMap = new Map([
+        ["Invalid file type.", "无效的文件类型。"],
+        ["Invalid input file type.", "无效的输入文件类型。"],
+        ["Invalid input format.", "无效的输入格式。"],
+        ["Invalid input XML.", "无效的输入 XML。"],
+        ["Invalid input file format.", "无效的输入文件格式。"],
+        ["Invalid or unrecognised file type", "无效或无法识别的文件类型"],
+        ["Invalid file type", "无效的文件类型"],
+        ["Invalid input XML", "无效的输入 XML"],
+        ["Invalid input JSON", "无效的输入 JSON"],
+        ["Not handshake data.", "不是握手数据。"],
+        ["Incorrect handshake length.", "握手长度不正确。"],
+        ["Not a Client Hello.", "不是 Client Hello。"],
+        ["Not a Server Hello.", "不是 Server Hello。"],
+        ["Not enough data in Client Hello.", "Client Hello 中数据不足。"],
+        ["Not enough data in Server Hello.", "Server Hello 中数据不足。"],
+        ["Not a Key Exchange Init.", "不是密钥交换初始化。"],
+        ["Incorrect packet length.", "数据包长度不正确。"],
+        ["Please enter a valid image file.", "请输入有效的图像文件。"],
+        ["Please enter a public key.", "请输入公钥。"],
+        ["Please enter a private key.", "请输入私钥。"],
+        ["Please provide an input.", "请提供输入。"],
+        ["Unsupported public key type", "不支持的公钥类型"],
+        ["Unsupported public key type.", "不支持的公钥类型。"],
+        ["Unable to decrypt using this key", "无法使用此密钥解密"],
+        ["Unable to decrypt using this key.", "无法使用此密钥解密。"],
+        ["Unable to decrypt input with these parameters.", "无法使用这些参数解密输入。"],
+        ["No input", "无输入"],
+        ["No match", "未匹配"],
+        ["No matches.", "未找到匹配项。"],
+    ]);
+
+    if (directMap.has(msg)) {
+        return directMap.get(msg);
+    }
+
+    const patterns = [
+        {
+            regex: /^Invalid input JSON: (.+)$/,
+            replace: "无效的输入 JSON：$1"
+        },
+        {
+            regex: /^Invalid JPath expression: (.+)$/,
+            replace: "无效的 JPath 表达式：$1"
+        },
+        {
+            regex: /^Invalid regex\\. Details: (.+)$/,
+            replace: "无效的正则表达式。详情：$1"
+        },
+        {
+            regex: /^Invalid XPath\\. Details:\\n(.+)\\.$/s,
+            replace: "无效的 XPath。详情：$1。"
+        },
+        {
+            regex: /^Invalid Regular Expression \\((.+)\\)$/,
+            replace: "无效的正则表达式（$1）"
+        },
+        {
+            regex: /^Invalid key length: (\\d+) bytes\\.?$/m,
+            replace: "无效的密钥长度：$1 字节。"
+        },
+        {
+            regex: /^Invalid IV length: (\\d+) bytes\\.?$/m,
+            replace: "无效的 IV 长度：$1 字节。"
+        },
+        {
+            regex: /^Invalid nonce length: (\\d+) bytes\\.?$/m,
+            replace: "无效的随机数长度：$1 字节。"
+        },
+        {
+            regex: /^Error loading image\\. \\((.+)\\)$/s,
+            replace: "加载图像出错。（$1）"
+        },
+        {
+            regex: /^Error applying filter to image\\. \\((.+)\\)$/s,
+            replace: "应用图像滤镜出错。（$1）"
+        },
+        {
+            regex: /^Error resizing image\\. \\((.+)\\)$/s,
+            replace: "调整图像大小出错。（$1）"
+        },
+        {
+            regex: /^Error containing image\\. \\((.+)\\)$/s,
+            replace: "包含图像出错。（$1）"
+        },
+        {
+            regex: /^Error inverting image\\. \\((.+)\\)$/s,
+            replace: "反转图像出错。（$1）"
+        },
+        {
+            regex: /^Error flipping image\\. \\((.+)\\)$/s,
+            replace: "翻转图像出错。（$1）"
+        },
+        {
+            regex: /^Error rotating image\\. \\((.+)\\)$/s,
+            replace: "旋转图像出错。（$1）"
+        },
+        {
+            regex: /^Error normalising image\\. \\((.+)\\)$/s,
+            replace: "归一化图像出错。（$1）"
+        },
+        {
+            regex: /^Error opening image file\\. \\((.+)\\)$/s,
+            replace: "打开图像文件出错。（$1）"
+        },
+        {
+            regex: /^Error adjusting image brightness or contrast\\. \\((.+)\\)$/s,
+            replace: "调整图像亮度或对比度出错。（$1）"
+        },
+        {
+            regex: /^Error changing image opacity\\. \\((.+)\\)$/s,
+            replace: "调整图像不透明度出错。（$1）"
+        },
+        {
+            regex: /^Error sharpening image\\. \\((.+)\\)$/s,
+            replace: "锐化图像出错。（$1）"
+        },
+        {
+            regex: /^Error: (.+)$/s,
+            replace: "错误：$1"
+        },
+        {
+            regex: /^Unknown (.+)$/s,
+            replace: "未知$1"
+        },
+        {
+            regex: /^Unable to (.+)$/s,
+            replace: "无法$1"
+        }
+    ];
+
+    for (const {regex, replace} of patterns) {
+        if (regex.test(msg)) {
+            return msg.replace(regex, replace);
+        }
+    }
+
+    return msg;
+}
+
+/**
  * Translate status messages to Chinese for display.
  *
  * @param {string} msg

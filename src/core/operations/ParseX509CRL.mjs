@@ -52,7 +52,7 @@ class ParseX509CRL extends Operation {
      */
     run(input, args) {
         if (!input.length) {
-            return "No input";
+            return "无输入";
         }
 
         const inputFormat = args[0];

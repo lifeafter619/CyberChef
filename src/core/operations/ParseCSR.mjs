@@ -49,7 +49,7 @@ class ParseCSR extends Operation {
      */
     run(input, args) {
         if (!input.length) {
-            return "No input";
+            return "无输入";
         }
 
         // Parse the CSR into JSON parameters

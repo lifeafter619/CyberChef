@@ -58,7 +58,7 @@ class DetectFileType extends Operation {
         const types = detectFileType(data, categories);
 
         if (!types.length) {
-            return "Unknown file type. Have you tried checking the entropy of this data to determine whether it might be encrypted or compressed?";
+            return "未知的文件类型。你是否尝试检查该数据的熵，以判断它是否可能被加密或压缩？";
         } else {
             const results = types.map(type => {
                 let output = `File type:   ${type.name}

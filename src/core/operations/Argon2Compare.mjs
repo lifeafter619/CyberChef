@@ -47,9 +47,9 @@ class Argon2Compare extends Operation {
                 encoded
             });
 
-            return `Match: ${input}`;
+            return `匹配：${input}`;
         } catch (err) {
-            return "No match";
+            return "未匹配";
         }
     }
 

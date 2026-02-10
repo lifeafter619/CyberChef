@@ -41,7 +41,7 @@ class ScanForEmbeddedFiles extends Operation {
      * @returns {string}
      */
     run(input, args) {
-        let output = "Scanning data for 'magic bytes' which may indicate embedded files. The following results may be false positives and should not be treated as reliable. Any sufficiently long file is likely to contain these magic bytes coincidentally.\n",
+        let output = "正在扫描数据中的“魔术字节”，以检测可能的嵌入文件。以下结果可能包含误报，请勿将其视为可靠结论。任何足够长的文件都可能偶然包含这些魔术字节。\n",
             numFound = 0;
         const categories = [],
             data = new Uint8Array(input);
@@ -67,7 +67,7 @@ class ScanForEmbeddedFiles extends Operation {
         }
 
         if (numFound === 0) {
-            output += "\nNo embedded files were found.";
+            output += "\n未发现嵌入文件。";
         }
 
         return output;

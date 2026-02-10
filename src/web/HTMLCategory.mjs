@@ -39,9 +39,10 @@ class HTMLCategory {
      */
     toHtml() {
         const catName = "cat" + this.name.replace(/[\s/\-:_]/g, "");
+        const displayName = this.name === "Favourites" ? "收藏" : this.name;
         let html = `<div class="panel category">
         <a class="category-title" data-toggle="collapse" data-target="#${catName}">
-            ${this.name}
+            ${displayName}
             <span class="op-count hidden">
                 ${this.opList.length}
             </span>

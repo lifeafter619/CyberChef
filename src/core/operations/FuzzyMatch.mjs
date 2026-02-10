@@ -94,7 +94,7 @@ class FuzzyMatch extends Operation {
         const matches = fuzzyMatch(searchStr, input, true, weights);
 
         if (!matches) {
-            return "No matches.";
+            return "未找到匹配项。";
         }
 
         let result = "", pos = 0, hlClass = "hl1";

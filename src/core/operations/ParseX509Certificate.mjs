@@ -52,7 +52,7 @@ class ParseX509Certificate extends Operation {
      */
     run(input, args) {
         if (!input.length) {
-            return "No input";
+            return "无输入";
         }
 
         const cert = new r.X509(),

@@ -123,7 +123,8 @@ class App {
     handleError(err, logToConsole) {
         if (logToConsole) log.error(err);
         const msg = err.displayStr || err.toString();
-        this.alert(Utils.escapeHtml(msg), this.options.errorTimeout, !this.options.showErrors);
+        const translatedMsg = Utils.translateErrorMessage(msg);
+        this.alert(Utils.escapeHtml(translatedMsg), this.options.errorTimeout, !this.options.showErrors);
     }
 
 
@@ -387,8 +388,8 @@ class App {
             if (favourites[i] in this.operations) {
                 validFavs.push(favourites[i]);
             } else {
-                this.alert(`The operation "${Utils.escapeHtml(favourites[i])}" is no longer available. ` +
-                    "It has been removed from your favourites.");
+                this.alert(`操作“${Utils.escapeHtml(favourites[i])}”已不可用。` +
+                    "已从你的收藏中移除。");
             }
         }
         return validFavs;
@@ -403,7 +404,7 @@ class App {
     saveFavourites(favourites) {
         if (!this.isLocalStorageAvailable()) {
             this.alert(
-                "Your security settings do not allow access to local storage so your favourites cannot be saved.",
+                "你的安全设置不允许访问本地存储，因此无法保存收藏。",
                 5000
             );
             return false;
