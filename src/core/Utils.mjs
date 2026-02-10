@@ -1567,7 +1567,7 @@ export function translateErrorMessage(msg) {
             replace: "无效的正则表达式。详情：$1"
         },
         {
-            regex: /^Invalid XPath\. Details:\n(.+)\.$/s,
+            regex: /^Invalid XPath\. Details:\s*(.+)\.$/s,
             replace: "无效的 XPath。详情：$1。"
         },
         {
@@ -1575,15 +1575,15 @@ export function translateErrorMessage(msg) {
             replace: "无效的正则表达式（$1）"
         },
         {
-            regex: /^Invalid key length: (\d+) bytes\.?$/m,
+            regex: /^Invalid key length: (\d+) bytes\.?$/,
             replace: "无效的密钥长度：$1 字节。"
         },
         {
-            regex: /^Invalid IV length: (\d+) bytes\.?$/m,
+            regex: /^Invalid IV length: (\d+) bytes\.?$/,
             replace: "无效的 IV 长度：$1 字节。"
         },
         {
-            regex: /^Invalid nonce length: (\d+) bytes\.?$/m,
+            regex: /^Invalid nonce length: (\d+) bytes\.?$/,
             replace: "无效的随机数长度：$1 字节。"
         },
         {
