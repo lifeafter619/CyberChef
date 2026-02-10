@@ -1563,7 +1563,7 @@ export function translateErrorMessage(msg) {
             replace: "无法解析 YAML：$1"
         },
         {
-            regex: /^Unable to parse input as JSON\\.(?:\\s|<br>)?(.+)?$/s,
+            regex: /^Unable to parse input as JSON\.(?:\s|<br>)?(.+)?$/s,
             replace: "无法将输入解析为 JSON。$1"
         },
         {
@@ -1575,7 +1575,7 @@ export function translateErrorMessage(msg) {
             replace: "无法解析 CSV：$1"
         },
         {
-            regex: /^Unable to parse JavaScript\\.<br>(.+)$/s,
+            regex: /^Unable to parse JavaScript\.<br>(.+)$/s,
             replace: "无法解析 JavaScript。<br>$1"
         },
         {
@@ -1708,7 +1708,7 @@ export function translateErrorMessage(msg) {
         },
         {
             regex: /^Unsupported JWK key type '(.+)'$/,
-            replace: "不支持的 JWK 密钥类型“$1”"
+            replace: "不支持的 JWK 密钥类型 \"$1\""
         },
         {
             regex: /^Unable to parse (.+)$/s,
