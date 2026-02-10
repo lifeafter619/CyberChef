@@ -1559,6 +1559,38 @@ export function translateErrorMessage(msg) {
             replace: "无效的输入 JSON：$1"
         },
         {
+            regex: /^Unable to parse YAML: (.+)$/s,
+            replace: "无法解析 YAML：$1"
+        },
+        {
+            regex: /^Unable to parse input as JSON\\.(?:\\s|<br>)?(.+)?$/s,
+            replace: "无法将输入解析为 JSON。$1"
+        },
+        {
+            regex: /^Unable to parse JSON to CSV: (.+)$/s,
+            replace: "无法将 JSON 解析为 CSV：$1"
+        },
+        {
+            regex: /^Unable to parse CSV: (.+)$/s,
+            replace: "无法解析 CSV：$1"
+        },
+        {
+            regex: /^Unable to parse JavaScript\\.<br>(.+)$/s,
+            replace: "无法解析 JavaScript。<br>$1"
+        },
+        {
+            regex: /^Unable to detect input key format\\.$/,
+            replace: "无法检测输入密钥格式。"
+        },
+        {
+            regex: /^Unable to find compression function$/,
+            replace: "无法找到压缩函数"
+        },
+        {
+            regex: /^Unable to find decompression function$/,
+            replace: "无法找到解压函数"
+        },
+        {
             regex: /^Invalid JPath expression: (.+)$/,
             replace: "无效的 JPath 表达式：$1"
         },
@@ -1639,12 +1671,48 @@ export function translateErrorMessage(msg) {
             replace: "错误：$1"
         },
         {
-            regex: /^Unknown (.+)$/s,
-            replace: "未知$1"
+            regex: /^Unknown granularity value: (.+)$/s,
+            replace: "未知的粒度值：$1"
         },
         {
-            regex: /^Unable to (.+)$/s,
-            replace: "无法$1"
+            regex: /^Unknown type: (.+)$/s,
+            replace: "未知类型：$1"
+        },
+        {
+            regex: /^Unknown Normalisation Form$/,
+            replace: "未知的归一化形式"
+        },
+        {
+            regex: /^Unknown algorithm version: (.+)$/s,
+            replace: "未知的算法版本：$1"
+        },
+        {
+            regex: /^Unknown Frame Identifier: (.+)$/s,
+            replace: "未知的帧标识符：$1"
+        },
+        {
+            regex: /^Unknown hash input type: (.+)$/s,
+            replace: "未知的哈希输入类型：$1"
+        },
+        {
+            regex: /^Unknown checksum algorithm$/,
+            replace: "未知的校验和算法"
+        },
+        {
+            regex: /^Unsupported input IP format$/,
+            replace: "不支持的输入 IP 格式"
+        },
+        {
+            regex: /^Unsupported output IP format$/,
+            replace: "不支持的输出 IP 格式"
+        },
+        {
+            regex: /^Unsupported JWK key type '(.+)'$/,
+            replace: "不支持的 JWK 密钥类型“$1”"
+        },
+        {
+            regex: /^Unable to parse (.+)$/s,
+            replace: "无法解析 $1"
         }
     ];
 
