@@ -1563,75 +1563,75 @@ export function translateErrorMessage(msg) {
             replace: "无效的 JPath 表达式：$1"
         },
         {
-            regex: /^Invalid regex\\. Details: (.+)$/,
+            regex: /^Invalid regex\. Details: (.+)$/,
             replace: "无效的正则表达式。详情：$1"
         },
         {
-            regex: /^Invalid XPath\\. Details:\\n(.+)\\.$/s,
+            regex: /^Invalid XPath\. Details:\n(.+)\.$/s,
             replace: "无效的 XPath。详情：$1。"
         },
         {
-            regex: /^Invalid Regular Expression \\((.+)\\)$/,
+            regex: /^Invalid Regular Expression \((.+)\)$/,
             replace: "无效的正则表达式（$1）"
         },
         {
-            regex: /^Invalid key length: (\\d+) bytes\\.?$/m,
+            regex: /^Invalid key length: (\d+) bytes\.?$/m,
             replace: "无效的密钥长度：$1 字节。"
         },
         {
-            regex: /^Invalid IV length: (\\d+) bytes\\.?$/m,
+            regex: /^Invalid IV length: (\d+) bytes\.?$/m,
             replace: "无效的 IV 长度：$1 字节。"
         },
         {
-            regex: /^Invalid nonce length: (\\d+) bytes\\.?$/m,
+            regex: /^Invalid nonce length: (\d+) bytes\.?$/m,
             replace: "无效的随机数长度：$1 字节。"
         },
         {
-            regex: /^Error loading image\\. \\((.+)\\)$/s,
+            regex: /^Error loading image\. \((.+)\)$/s,
             replace: "加载图像出错。（$1）"
         },
         {
-            regex: /^Error applying filter to image\\. \\((.+)\\)$/s,
+            regex: /^Error applying filter to image\. \((.+)\)$/s,
             replace: "应用图像滤镜出错。（$1）"
         },
         {
-            regex: /^Error resizing image\\. \\((.+)\\)$/s,
+            regex: /^Error resizing image\. \((.+)\)$/s,
             replace: "调整图像大小出错。（$1）"
         },
         {
-            regex: /^Error containing image\\. \\((.+)\\)$/s,
+            regex: /^Error containing image\. \((.+)\)$/s,
             replace: "包含图像出错。（$1）"
         },
         {
-            regex: /^Error inverting image\\. \\((.+)\\)$/s,
+            regex: /^Error inverting image\. \((.+)\)$/s,
             replace: "反转图像出错。（$1）"
         },
         {
-            regex: /^Error flipping image\\. \\((.+)\\)$/s,
+            regex: /^Error flipping image\. \((.+)\)$/s,
             replace: "翻转图像出错。（$1）"
         },
         {
-            regex: /^Error rotating image\\. \\((.+)\\)$/s,
+            regex: /^Error rotating image\. \((.+)\)$/s,
             replace: "旋转图像出错。（$1）"
         },
         {
-            regex: /^Error normalising image\\. \\((.+)\\)$/s,
+            regex: /^Error normalising image\. \((.+)\)$/s,
             replace: "归一化图像出错。（$1）"
         },
         {
-            regex: /^Error opening image file\\. \\((.+)\\)$/s,
+            regex: /^Error opening image file\. \((.+)\)$/s,
             replace: "打开图像文件出错。（$1）"
         },
         {
-            regex: /^Error adjusting image brightness or contrast\\. \\((.+)\\)$/s,
+            regex: /^Error adjusting image brightness or contrast\. \((.+)\)$/s,
             replace: "调整图像亮度或对比度出错。（$1）"
         },
         {
-            regex: /^Error changing image opacity\\. \\((.+)\\)$/s,
+            regex: /^Error changing image opacity\. \((.+)\)$/s,
             replace: "调整图像不透明度出错。（$1）"
         },
         {
-            regex: /^Error sharpening image\\. \\((.+)\\)$/s,
+            regex: /^Error sharpening image\. \((.+)\)$/s,
             replace: "锐化图像出错。（$1）"
         },
         {
