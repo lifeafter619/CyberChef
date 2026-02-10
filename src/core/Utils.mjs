@@ -1579,7 +1579,7 @@ export function translateErrorMessage(msg) {
             replace: "无法解析 JavaScript。<br>$1"
         },
         {
-            regex: /^Unable to detect input key format\\.$/,
+            regex: /^Unable to detect input key format\.$/,
             replace: "无法检测输入密钥格式。"
         },
         {
